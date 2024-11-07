@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEUS - Plataforma de Aprendizaje</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Overlay oscuro -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Header con saludo y perfil -->
+    <header class="header">
+        <div class="welcome">
+            <h1>Bienvenido, <span id="studentName"></span></h1>
+        </div>
+        <div class="profile">
+            <button class="profile-btn" onclick="window.location.href='configuracion.html'">
+                <img src="user-icon.png" alt="Perfil de Usuario">
+            </button>
+        </div>
+    </header>
+
+    <!-- Botón de menú lateral -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span class="arrow"></span>
+    </div>
+
+    <!-- Barra de navegación lateral -->
+    <div class="sidebar" id="sidebar">
+        <!-- Perfil de usuario en el menú -->
+        <div class="sidebar-profile">
+            <img src="user-icon.png" alt="Perfil" class="sidebar-profile-pic">
+            <p id="sidebarStudentName"></p>
+            <p id="sidebarEmail">estudiante@ejemplo.com</p>
+            <button class="edit-btn" onclick="window.location.href='configuracion.html'">Editar</button>
+        </div>
+        <!-- Opciones de navegación -->
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="courses.html">Mis Cursos</a></li>
+                <li><a href="progress.html">Progreso</a></li>
+                <li><a href="#">Calendario</a></li>
+                <li><a href="configuracion.html">Perfil de Usuario</a></li>
+            </ul>
+        </nav>
+        <!-- Opciones al fondo del menú -->
+        <div class="sidebar-footer">
+            <nav>
+                <ul>
+                    <li><a href="configuracion.html">Configuración</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content" id="mainContent">
+        <!-- Sección de lecciones -->
+        <section class="lessons-section">
+            <div class="lesson">
+                <h2>Lección Actual</h2>
+                <p>Repaso de Álgebra Lineal</p>
+            </div>
+
+            <div class="lesson">
+                <h2>Últimas Lecciones</h2>
+                <p>Cálculo Diferencial - Completado</p>
+                <p>Física Básica - Completado</p>
+            </div>
+
+            <div class="lesson">
+                <h2>Próxima Lección</h2>
+                <p>Ecuaciones Diferenciales - Programada para mañana</p>
+            </div>
+        </section>
+
+        <!-- Sección de progreso -->
+        <section class="progress-section">
+            <h2>Tu Progreso</h2>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 50%;"></div>
+            </div>
+            <p>Has completado el 50% de tu curso.</p>
+        </section>
+    </div>
+
+    <script>
+        // Leer el nombre del estudiante desde almacenamiento local
+        document.addEventListener('DOMContentLoaded', function () {
+            const studentName = localStorage.getItem('studentName') || 'Estudiante';
+            const studentEmail = localStorage.getItem('studentEmail') || 'estudiante@ejemplo.com';
+            document.getElementById('studentName').textContent = studentName;
+            document.getElementById('sidebarStudentName').textContent = studentName;
+            document.getElementById('sidebarEmail').textContent = studentEmail;
+        });
+
+        // Función para abrir/cerrar el menú lateral
+        function toggleMenu() {
+            var sidebar = document.getElementById('sidebar');
+            var overlay = document.getElementById('overlay');
+            var arrow = document.querySelector('.menu-toggle .arrow');
+            var mainContent = document.getElementById('mainContent');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+
+            // Cambiar la flecha del botón según el estado del menú
+            if (sidebar.classList.contains('active')) {
+                arrow.style.transform = 'rotate(180deg)';
+            } else {
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Cerrar menú al hacer clic fuera del menú o del botón
+        document.getElementById('overlay').addEventListener('click', function () {
+            var sidebar = document.getElementById('sidebar');
+            var overlay = document.getElementById('overlay');
+            var arrow = document.querySelector('.menu-toggle .arrow');
+            if (sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+.progress-container {
+    display: flex;
+    flex-direction: column; /* Colocar los elementos en columnas */
+    align-items: center; /* Centrar los elementos */
+    padding: 20px;
+}
+
+.slider {
+    display: flex; /* Usar flexbox para el slider */
+    overflow: hidden; /* Ocultar el desbordamiento */
+    position: relative; /* Posición relativa para los botones */
+    width: 100%; /* Ancho total */
+    max-width: 600px; /* Ancho máximo del slider */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.slide {
+    min-width: 100%; /* Cada slide ocupa todo el ancho del slider */
+    transition: transform 0.5s ease; /* Transición suave al cambiar de slide */
+    padding: 20px; /* Espaciado interno */
+    background-color: white; /* Fondo blanco para las lecciones */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+button.prev, button.next {
+    position: absolute; /* Posición absoluta para los botones */
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Ajustar la posición */
+    background-color: rgba(243, 156, 18, 0.8); /* Fondo semi-transparente */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px; /* Espaciado interno */
+    cursor: pointer; /* Cursor tipo puntero */
+    border-radius: 50%; /* Botón redondo */
+}
+
+button.prev {
+    left: 10px; /* Posición izquierda */
+}
+
+button.next {
+    right: 10px; /* Posición derecha */
+}
+
+button.prev:hover, button.next:hover {
+    background-color: #d35400; /* Color más oscuro en hover */
+}
+
+header select {
+    margin: 20px; /* Espaciado superior */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de la fuente */
+}

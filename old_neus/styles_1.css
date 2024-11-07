@@ -1,0 +1,105 @@
+/* Estilos globales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+}
+
+h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos de la barra de navegación lateral */
+.sidebar {
+    background-color: #2c3e50;
+    color: white;
+    width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Contenido principal */
+.main-content {
+    margin-left: 270px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lesson, .progress, .ar-section, .calendar, .collaboration {
+    background-color: #ecf0f1;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.lesson button, .ar-section button, .collaboration button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lesson button:hover, .ar-section button:hover, .collaboration button:hover {
+    background-color: #2980b9;
+}
+
+.progress-bar {
+    background-color: #bdc3c7;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.progress-bar-fill {
+    background-color: #2ecc71;
+    height: 100%;
+}
+
+.calendar-box {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #bdc3c7;
+    border-radius: 10px;
+}

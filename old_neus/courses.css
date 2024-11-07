@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf6e3;
+    color: #333;
+}
+
+.header {
+    background-color: #f39c12; /* Color del encabezado */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.courses-container {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los cursos se ajusten en varias filas */
+    justify-content: center; /* Centrar los cursos */
+    padding: 20px;
+    gap: 20px; /* Espaciado entre los cursos */
+}
+
+.course-card {
+    background-color: white; /* Fondo blanco para el curso */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Centrando el texto */
+    width: 250px; /* Ancho fijo de las tarjetas */
+    transition: transform 0.3s; /* Animación en hover */
+}
+
+.course-card:hover {
+    transform: scale(1.05); /* Aumentar tamaño al pasar el ratón */
+}
+
+.course-icon {
+    width: 50px; /* Ancho del icono */
+    height: auto; /* Mantener proporción */
+}
+
+.go-to-course-btn {
+    background-color: #f39c12; /* Color del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    cursor: pointer; /* Cursor tipo puntero */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.go-to-course-btn:hover {
+    background-color: #d35400; /* Color más oscuro en hover */
+}

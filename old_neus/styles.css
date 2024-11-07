@@ -1,0 +1,257 @@
+/* Estilos globales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf6e3; /* Color de fondo suave */
+    color: #333; /* Color de texto */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header (bienvenida y perfil) */
+.header {
+    background-color: #f39c12; /* Color cálido del header */
+    color: white; /* Color de texto en el header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Transición suave */
+}
+
+.welcome h1 {
+    font-size: 1.8rem; /* Tamaño del texto de bienvenida */
+}
+
+.profile-btn {
+    border: none; /* Sin borde */
+    background-color: transparent; /* Sin fondo */
+    cursor: pointer; /* Cursor tipo puntero */
+    width: 50px; /* Tamaño del botón */
+    height: 50px; /* Tamaño del botón */
+    border-radius: 50%; /* Botón redondo */
+    overflow: hidden; /* Recortar imagen */
+    transition: transform 0.3s ease; /* Transición al hacer hover */
+}
+
+.profile-btn img {
+    width: 100%; /* Imagen ocupa todo el botón */
+    height: auto; /* Mantener proporción */
+}
+
+/* Animación al hacer hover en el botón de perfil */
+.profile-btn:hover {
+    transform: scale(1.2); /* Aumentar tamaño en hover */
+}
+
+.profile-btn:active img {
+    filter: hue-rotate(90deg); /* Cambiar color al hacer clic */
+}
+
+/* Estilos de la barra de navegación lateral */
+.sidebar {
+    background-color: #d35400; /* Color del menú */
+    color: white; /* Color del texto en el menú */
+    width: 250px; /* Ancho del menú */
+    height: 100vh; /* Alto del menú */
+    padding: 20px; /* Espaciado interno */
+    position: fixed; /* Fijo a la izquierda */
+    left: -250px; /* Inicialmente escondido */
+    top: 0; /* Al inicio de la página */
+    transition: left 0.3s ease; /* Transición suave */
+    z-index: 100; /* Por encima del contenido */
+}
+
+.sidebar.active {
+    left: 0; /* Mostrar menú */
+}
+
+/* Estilos para oscurecer la página cuando el menú está activo */
+.overlay {
+    position: fixed; /* Cubrir toda la página */
+    top: 0; /* Arriba */
+    left: 0; /* Izquierda */
+    width: 100vw; /* Ancho total */
+    height: 100vh; /* Alto total */
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    display: none; /* Oculto por defecto */
+    z-index: 99; /* Por debajo del menú */
+}
+
+.overlay.active {
+    display: block; /* Mostrar cuando está activo */
+}
+
+.sidebar nav ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+.sidebar nav ul li {
+    margin: 20px 0; /* Espaciado entre opciones */
+}
+
+.sidebar nav ul li a {
+    color: white; /* Color de texto */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 18px; /* Tamaño de fuente */
+}
+
+.sidebar nav ul li a:hover {
+    color: #f39c12; /* Color al pasar el mouse */
+}
+
+/* Estilos del perfil de usuario en el menú lateral */
+.sidebar-profile {
+    text-align: center; /* Centrar contenido */
+    margin-bottom: 30px; /* Espacio inferior */
+}
+
+.sidebar-profile-pic {
+    width: 80px; /* Ancho de la imagen de perfil */
+    height: 80px; /* Alto de la imagen de perfil */
+    border-radius: 50%; /* Redondear la imagen */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+.sidebar-profile p {
+    margin: 5px 0; /* Espacio vertical entre párrafos */
+}
+
+.edit-btn {
+    background-color: #e67e22; /* Color del botón de editar */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor tipo puntero */
+}
+
+.edit-btn:hover {
+    background-color: #f39c12; /* Color al pasar el mouse */
+}
+
+/* Sección de pie del menú lateral */
+.sidebar-footer {
+    position: absolute; /* Fijo en la parte inferior */
+    bottom: 20px; /* Espacio inferior */
+    width: 100%; /* Ancho total */
+}
+
+.sidebar-footer ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+.sidebar-footer ul li {
+    margin: 20px 0; /* Espaciado entre opciones */
+}
+
+.sidebar-footer ul li a {
+    color: white; /* Color de texto */
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Estilos del contenido principal */
+.main-content {
+    margin-left: 0; /* Sin margen izquierdo por defecto */
+    padding: 20px; /* Espaciado interno */
+    transition: margin-left 0.3s ease; /* Transición suave */
+    flex: 1; /* Ocupa el espacio restante */
+}
+
+.lessons-section,
+.progress-section {
+    margin: 20px 0; /* Espaciado entre secciones */
+}
+
+.lessons-section,
+.progress-section {
+    background-color: #fff5e1; /* Fondo suave para secciones */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilos del botón de menú */
+.menu-toggle {
+    position: fixed; /* Fijo en la parte superior */
+    left: 0; /* A la izquierda */
+    top: 20px; /* Espacio superior */
+    background-color: #d35400; /* Color del botón */
+    width: 40px; /* Ancho del botón */
+    height: 40px; /* Alto del botón */
+    border-radius: 20px; /* Botón redondo */
+    display: flex; /* Flexbox para centrar flecha */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    cursor: pointer; /* Cursor tipo puntero */
+    z-index: 101; /* Por encima del contenido */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.menu-toggle:hover {
+    background-color: #f39c12; /* Color al pasar el mouse */
+}
+
+.arrow {
+    width: 0; /* Sin ancho */
+    height: 0; /* Sin alto */
+    border-left: 8px solid white; /* Parte izquierda de la flecha */
+    border-top: 5px solid transparent; /* Parte superior de la flecha */
+    border-bottom: 5px solid transparent; /* Parte inferior de la flecha */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+/* Sección de progreso */
+.progress-section {
+    background-color: #fff5e1; /* Fondo suave para progreso */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.progress-bar {
+    background-color: #ddd; /* Color de fondo de la barra de progreso */
+    border-radius: 5px; /* Bordes redondeados */
+    overflow: hidden; /* Recortar el contenido */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+.progress-bar-fill {
+    height: 20px; /* Alto de la barra de progreso */
+    background-color: #f39c12; /* Color de la barra de progreso */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Colocar elementos en columna */
+        align-items: flex-start; /* Alinear a la izquierda */
+    }
+
+    .profile {
+        margin-top: 10px; /* Espacio superior en perfil */
+    }
+
+    .sidebar {
+        width: 200px; /* Ancho del menú en pantallas pequeñas */
+    }
+
+    .sidebar.active {
+        left: 0; /* Mostrar menú */
+    }
+
+    .menu-toggle {
+        left: 10px; /* Ajustar posición del botón en móvil */
+        top: 10px; /* Ajustar posición del botón en móvil */
+    }
+}
